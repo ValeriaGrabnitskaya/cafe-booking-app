@@ -8,7 +8,8 @@ const ExtractTextPlugin = require("extract-text-webpack-plugin");
 export default new Config().merge({
   entry: ["babel-polyfill", './src/app/index.js'],
   output: {
-    path: path.resolve(__dirname, '/client/build')
+    path: __dirname + './public',
+    publicPath: '/',
   },
   devtool: 'source-map',
   module: {

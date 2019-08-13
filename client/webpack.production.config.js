@@ -3,7 +3,8 @@ import Config from 'webpack-config';
 
 export default new Config().extend('webpack.base.config.js').merge({
   output: {
-    filename: '[name].bundle.[hash].min.js'
+    filename: '[name].bundle.[hash].min.js',
+    path: path.resolve(__dirname, '/client/build')
   },
   plugins: [
     new webpack.DefinePlugin({
