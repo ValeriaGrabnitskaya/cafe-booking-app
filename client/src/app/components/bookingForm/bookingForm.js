@@ -153,14 +153,14 @@ class BookingForm extends React.PureComponent {
                         <h4>Заполните поля</h4>
                     </div>
                     <div className="form-row">
-                        <div className="form-group col-md-12">
+                        <div className="form-group col-md-6 col-sm-12">
                             <span className="p-float-label">
                                 <h5 className="LabelInput">Имя<span style={{ color: "red" }}>*</span></h5>
                                 <InputText id="float-input" type="text" className="form-control Input" value={this.state.userName} onChange={(e) => this.setState({ userName: e.target.value })} />
                                 <p style={{ color: "red" }}>{(!this.state.isFormValid && !this.state.isUserNameValid) && 'Заполните поле'}</p>
                             </span>
                         </div>
-                        <div className="form-group col-md-12">
+                        <div className="form-group col-md-6 col-sm-12">
                             <span className="p-float-label">
                                 <h5 className="LabelInput">E-mail<span style={{ color: "red" }}>*</span></h5>
                                 <InputText id="float-input" type="text" className="form-control Input" value={this.state.email} onChange={(e) => this.setState({ email: e.target.value })} />
@@ -169,7 +169,7 @@ class BookingForm extends React.PureComponent {
                         </div>
                     </div>
                     <div className="form-row">
-                        <div className="form-group col-md-12">
+                        <div className="form-group col-md-6 col-sm-12">
                             <span className="p-float-label">
                                 <h5 className="LabelInput">Телефон<span style={{ color: "red" }}>*</span></h5>
                                 <InputMask className="form-control Input" mask="+(375)(99) 999-99-99" value={this.state.phone} placeholder="+(375)(99) 999-99-99" onChange={(e) => this.setState({ phone: e.value })}></InputMask>
@@ -190,14 +190,14 @@ class BookingForm extends React.PureComponent {
                         </div>
                     </div>
                     <div className="form-row mb-md-5">
-                        <div className="col-md-12">
+                        <div className="col-md-6 col-sm-12">
                             <h5 className="LabelInput">Время с<span style={{ color: "red" }}>*</span></h5>
                             <Dropdown className="Input" value={this.state.timeFrom} options={this.configTime(this.props.openTime, true)} onChange={(e) => this.setState({ timeFrom: e.value })}
                                 filter={true} placeholder="Выберите время" filterBy="id,value" showClear={true} optionLabel="id" />
                             <p style={{ color: "red" }}>{(!this.state.isSearchFormValid && !this.state.isTimeFromValid) && 'Заполните поле'}</p>
                             <p style={{ color: "red" }}>{(!this.state.isSearchFormValid && !this.state.isTimePeriodValid) && 'Выберите корректный промежуток времени'}</p>
                         </div>
-                        <div className="col-md-12">
+                        <div className="col-md-6 col-sm-12">
                             <h5 className="LabelInput">Время по<span style={{ color: "red" }}>*</span></h5>
                             <Dropdown className="Input" value={this.state.timeTo} options={this.configTime(this.props.openTime, false)} onChange={(e) => this.setState({ timeTo: e.value })}
                                 filter={true} placeholder="Выберите время" filterBy="id,value" showClear={true} optionLabel="id" />
