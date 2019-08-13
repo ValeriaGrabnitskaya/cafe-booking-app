@@ -1,0 +1,23 @@
+.Footer {
+  background-color:rgb(104, 47, 10);
+  height: 100px;
+  display: flex;
+}
+
+.Footer .Icon {
+  width: 40px;
+  height: 40px;
+  margin-right: 1rem!important;
+}
+
+.Footer .TextIcon {
+  color: rgb(253, 241, 226);
+  font-size: 18px;
+  font-style: italic;
+}
+
+.Footer .IconGroup{
+  width: 40px;
+  height: 40px;
+  margin-right: 2rem!important;
+}

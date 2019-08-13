@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+        integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <link rel="stylesheet" href="../src/css/main-page.css">
+    <title>CafeOrder</title>
+</head>
+
+<body>
+    <div id="container">
+        <div
+            class="d-flex flex-column flex-md-row align-items-center p-3 px-md-4 mb-0 bg-white border-bottom shadow-sm fixed-top navBar">
+            <h5 class="my-0 mr-md-auto font-weight-normal"><a class="p-4 text-dark text-uppercase"
+                    href="./main-page.html">CinaBu</a></h5>
+            <nav class="my-2 my-md-0 mr-md-auto">
+                <a class="p-4 text-dark text-uppercase" href="./about.html">О нас</a>
+                <a class="p-4 text-dark text-uppercase" href="./cafe-catalog.html">Каталог заведений</a>
+                <a class="p-4 text-dark text-uppercase" href="#">Условия бронирования</a>
+            </nav>
+            <button type="button" class="btn btn-outline-primary" href="#">Регистрация</button>
+        </div>
+
+        <main role="main" class="container mb-5">
+            <form>
+                <div class="form-row">
+                    <div class="form-group col-md-4">
+                        <label for="inputEmail4">Дата</label>
+                        <input type="date" class="form-control" id="inputEmail4" placeholder="Дата">
+                    </div>
+                    <div class="form-group col-md-4">
+                        <label for="inputPassword4">Время с</label>
+                        <input type="time" class="form-control" id="inputPassword4" placeholder="Время с">
+                    </div>
+                    <div class="form-group col-md-4">
+                        <label for="inputEmail4">Время по</label>
+                        <input type="time" class="form-control" id="inputEmail4" placeholder="Время по">
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="form-group col-md-6">
+                        <label for="exampleFormControlSelect1">Тип заведения</label>
+                        <select id="inputState" class="form-control">
+                            <option>Все</option>
+                            <option>Кафе</option>
+                            <option>Рестораны</option>
+                            <option>Кафе</option>
+                            <option>Бары</option>
+                        </select>
+                    </div>
+                    <div class="form-group col-md-6">
+                        <label for="inputEmail4">Название заведения</label>
+                        <input type="text" class="form-control" id="inputEmail4" placeholder="Название заведения">
+                    </div>
+                </div>
+                <div class="form-group" style="text-align: right">
+                    <button type="submit" class="btn btn-primary">Поиск</button>
+                </div>
+            </form>
+            <h2 class="mb-5">Каталог товаров</h2>
+            <table class="table table-striped mb-4">
+                <thead>
+                    <tr>
+                        <th scope="col">Название</th>
+                        <th scope="col">Описание</th>
+                        <th scope="col"></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><a href="./about-cafe.html">Malt&Hops</a></td>
+                        <td>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Magnam molestiae vero praesentium
+                            soluta assumenda itaque tempora dolores minus. Voluptatibus, aperiam! Quisquam accusantium
+                            sequi sint voluptas, aliquam dolor. Molestias, neque earum.</td>
+                        <td><button type="button" class="btn btn-primary"><a style="color: white" href="./reservation.html">Забронировать</a></button></td>
+                    </tr>
+                    <tr>
+                        <td>Astoria Riverside</td>
+                        <td>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Magnam molestiae vero praesentium
+                            soluta assumenda itaque tempora dolores minus. Voluptatibus, aperiam! Quisquam accusantium
+                            sequi sint voluptas, aliquam dolor. Molestias, neque earum.</td>
+                        <td><button type="button" class="btn btn-primary">Забронировать</button></td>
+                    </tr>
+                    <tr>
+                        <td>Larry</td>
+                        <td>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Magnam molestiae vero praesentium
+                            soluta assumenda itaque tempora dolores minus. Voluptatibus, aperiam! Quisquam accusantium
+                            sequi sint voluptas, aliquam dolor. Molestias, neque earum.</td>
+                        <td><button type="button" class="btn btn-primary">Забронировать</button></td>
+                    </tr>
+                </tbody>
+            </table>
+            <nav aria-label="Page navigation example" class="mr-md-auto ml-md-auto w-25">
+                <ul class="pagination">
+                    <li class="page-item">
+                        <a class="page-link" href="#" aria-label="Previous">
+                            <span aria-hidden="true">&laquo;</span>
+                        </a>
+                    </li>
+                    <li class="page-item"><a class="page-link" href="#">1</a></li>
+                    <li class="page-item"><a class="page-link" href="#">2</a></li>
+                    <li class="page-item"><a class="page-link" href="#">3</a></li>
+                    <li class="page-item">
+                        <a class="page-link" href="#" aria-label="Next">
+                            <span aria-hidden="true">&raquo;</span>
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+        </main>
+
+        <footer style="background-color: cornflowerblue; height: 100px;display: flex;">
+            <div class="container" style="margin: auto; text-align: center">
+                <div class="row">
+                    <div class="col-md-6">
+                        <img src="../src/img/phone-call.svg" alt="Instagram" style="width: 30px; height: 30px;">
+                        <span>+375291111111</span>
+                    </div>
+                    <div class="col-md-6">
+                        <a href="#">
+                            <img src="../src/img/instagram.svg" alt="Instagram" style="width: 30px; height: 30px;">
+                        </a>
+                        <a href="#">
+                            <img src="../src/img/telegram.svg" alt="Instagram" style="width: 30px; height: 30px;">
+                        </a>
+                        <a href="#">
+                            <img src="../src/img/viber.svg" alt="Instagram" style="width: 30px; height: 30px;">
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </footer>
+    </div>
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"
+        integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"
+        integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>

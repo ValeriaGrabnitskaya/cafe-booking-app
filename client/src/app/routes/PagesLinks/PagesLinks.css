@@ -1,0 +1,41 @@
+.Navigation {
+    background-color: rgb(253, 241, 226) !important;
+    font-family: 'Times New Roman' serif;
+}
+
+.Navigation .Logo {
+    font-style: italic;
+    color: rgb(104, 47, 10);
+}
+
+.Navigation .navbar-toggler-icon {
+    color: rgb(104, 47, 10);
+}
+
+.Navigation .PageLink {
+    font-size: 17px;
+    font-style: italic;
+    font-weight: 500;
+    color: rgb(104, 47, 10);
+    text-transform: uppercase;
+}
+
+.Navigation .ActivePageLink {
+    font-weight: bold;
+    font-size: 19px;
+}
+
+.Navigation .PageLink:hover {
+    font-weight: bold;
+    color: rgb(104, 47, 10);
+}
+
+@media (max-width: 575.98px) {
+    .Navigation .Logo {
+        font-size: 2rem;
+    }
+    .Navigation .PageLink {
+        font-size: 13px;
+        padding: .5rem !important;
+    }
+}

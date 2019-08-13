@@ -1,0 +1,71 @@
+.BookingFormContainer {
+    background-color:  rgba(94, 43, 9, 0.164);
+    color: rgb(104, 47, 10);
+    font-style: italic;
+    font-family: 'Times New Roman' serif;
+}
+
+.BookingFormContainer .BookingForm {
+    padding: 3%;
+}
+
+.BookingFormContainer .BookingForm .LabelInput {
+    font-size: 16px;
+}
+
+.BookingFormContainer .BookingForm .Label {
+    font-size: 14px !important;
+    font-weight: 500;
+    color: rgb(104, 47, 10);
+}
+
+.BookingFormContainer .BookingForm .Input {
+    width: 100%;
+    background-color: rgba(252, 244, 244, 0.911);
+}
+
+.BookingFormContainer .BookingForm .Input label {
+    background-color: rgba(255, 243, 236, 0.616);
+    font-size: 15px;
+}
+
+.BookingFormContainer .BookingForm .Calendar {
+    border-radius: .25rem;
+    width: 92.5%;
+}
+
+.BookingFormContainer .BookingForm .Calendar input {
+    background-color: rgba(252, 247, 247, 0.884);
+    font-size: 15px;
+    width: 100%;
+    border-bottom-left-radius: .25rem;
+    border-top-left-radius: .25rem;
+
+}
+
+.BookingFormContainer .BookingForm .Calendar button {
+    border-bottom-right-radius: .25rem;
+    border-top-right-radius: .25rem;
+
+}
+
+.BookingButtonContainer{
+    padding: 3%;
+    text-align: center;
+}
+
+.BookingButtonContainer .BookingButton{
+    width: 50%;
+}
+
+/* @media (max-width: 960px) {
+    .BookingFormContainer .BookingForm .Input {
+        width: 100%;
+    }
+    .BookingFormContainer .BookingForm .Calendar {
+        width: 92.5%;
+    }
+    .BookingButtonContainer {
+        margin-top: 5%;
+    }
+} */

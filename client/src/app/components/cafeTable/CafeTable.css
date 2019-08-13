@@ -1,0 +1,38 @@
+.CatalogTable table thead tr th{
+    background-color:rgba(94, 43, 9, 0.164) !important;
+}
+
+.CatalogTable table tbody tr td{
+    background-color:rgba(255, 243, 236, 0.616) !important;
+}
+
+.CatalogTable table tbody tr{
+    border-bottom: 2px solid rgba(94, 43, 9, 0.164);
+}
+
+.CatalogTable .p-paginator{
+    background-color:rgba(94, 43, 9, 0.164) !important;
+}
+
+.CatalogTable .p-paginator-first, .CatalogTable .p-paginator-prev, .CatalogTable .p-paginator-next, .CatalogTable .p-paginator-last {
+    color:black !important;
+}
+
+.CatalogTable .p-paginator .p-dropdown .p-dropdown-label, .CatalogTable .p-paginator .p-dropdown .p-dropdown-trigger {
+    background-color:rgba(255, 243, 236, 0.616) !important;
+    color:black !important;
+}
+
+.CatalogTable .p-paginator .p-dropdown-panel .p-dropdown-items .p-dropdown-item{
+    background-color:rgba(255, 243, 236, 0.616) !important;
+    color:black !important;
+}
+
+.CatalogTable .CafeNameLink {
+    text-decoration: underline;
+    color: rgb(104, 47, 10);
+}
+
+.CatalogTable .BookBtn {
+    font-size: 14px;
+}

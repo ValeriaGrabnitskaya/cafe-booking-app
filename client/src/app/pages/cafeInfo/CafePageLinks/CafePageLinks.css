@@ -1,0 +1,22 @@
+.NavigationCafe {
+    background-color:rgba(94, 43, 9, 0.164) !important;
+    font-family: 'Times New Roman' serif !important;
+}
+
+.NavigationCafe .PageLink {
+    font-size: 15px;
+    font-style: italic;
+    font-weight: 500;
+    color: rgb(104, 47, 10);
+    text-transform: uppercase;
+}
+
+.NavigationCafe .ActivePageLink {
+    font-weight: bold;
+    font-size: 17px;
+}
+
+.NavigationCafe .PageLink:hover {
+    font-weight: bold;
+    color: rgb(104, 47, 10);
+}

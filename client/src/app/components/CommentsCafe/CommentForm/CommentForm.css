@@ -1,0 +1,25 @@
+.CommentFormContainer {
+    background-color:  rgba(94, 43, 9, 0.164);
+    color: rgb(104, 47, 10);
+    font-style: italic;
+    font-family: 'Times New Roman' serif;
+}
+
+.CommentFormContainer .CommentForm {
+    padding: 3%;
+}
+
+.CommentFormContainer .CommentForm .Label {
+    font-size: 16px;
+    font-weight: 500;
+    color: rgb(104, 47, 10);
+}
+
+.CommentFormContainer .CommentForm .Input {
+    width: 80%;
+    background-color: rgba(252, 244, 244, 0.911);
+}
+
+.CommentFormContainer .CommentForm .TextArea {
+    background-color: rgba(252, 244, 244, 0.911);
+}

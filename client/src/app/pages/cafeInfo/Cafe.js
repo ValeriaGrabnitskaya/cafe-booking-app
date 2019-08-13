@@ -1,0 +1,23 @@
+import React from 'react';
+import { BrowserRouter } from 'react-router-dom';
+import { withRouter } from "react-router";
+
+import CafePagesRouter from './CafePagesRouter';
+import CafePageLinks from './CafePageLinks/CafePageLinks';
+
+class Cafe extends React.PureComponent {
+
+  render() {
+    let placeId = parseInt(this.props.match.params.placeId);
+    return (
+      <div className="container">
+        <BrowserRouter>
+          <CafePageLinks placeId={placeId} />
+          <CafePagesRouter />
+        </BrowserRouter>
+      </div>
+    );
+  }
+}
+
+export default withRouter(Cafe);

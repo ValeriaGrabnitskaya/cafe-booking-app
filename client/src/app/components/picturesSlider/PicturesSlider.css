@@ -1,0 +1,42 @@
+.TextBlock {
+    margin-bottom: 300px;
+    color: rgb(252, 244, 235);
+    font-style: italic;
+    display: block !important;
+}
+
+.TextBlock h5 {
+    font-size: 40px;
+}
+
+.Picture {
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+    width: 100%;
+    height: 670px;
+    overflow: hidden;
+}
+
+.FirstPicture {
+    background-image: linear-gradient( rgba(0, 0, 0, 0.616), rgba(0, 0, 0, 0.616)), url('/src/img/main-page/1.jpg');
+}
+
+.SecondPicture {
+    background-image: linear-gradient( rgba(0, 0, 0, 0.616), rgba(0, 0, 0, 0.616)), url('/src/img/main-page/2.jpg');
+}
+
+.ThirdPicture {
+    background-image: linear-gradient( rgba(0, 0, 0, 0.616), rgba(0, 0, 0, 0.616)), url('/src/img/main-page/3.jpg');
+}
+
+@media (max-width: 575.98px) {
+    .TextBlock {
+        width: 50%;
+        margin-right: auto;
+        margin-left: auto;
+    }
+    .TextBlock h5 {
+        font-size: 20px;
+    }
+}
