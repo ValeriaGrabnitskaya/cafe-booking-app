@@ -9,7 +9,7 @@
 
 .NotAvailable {
     border: 2px solid red;
-    pointer-events: none;
+    cursor: not-allowed;
 }
 
 .SelectedTable {
