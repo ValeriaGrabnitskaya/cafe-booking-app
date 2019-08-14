@@ -58,14 +58,6 @@
     width: 50%;
 }
 
-/* @media (max-width: 960px) {
-    .BookingFormContainer .BookingForm .Input {
-        width: 100%;
-    }
-    .BookingFormContainer .BookingForm .Calendar {
-        width: 92.5%;
-    }
-    .BookingButtonContainer {
-        margin-top: 5%;
-    }
-} */
+.BookingForm .SetBorder {
+    box-shadow: 0 0 0 0.2em #8dcdff;
+}

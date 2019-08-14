@@ -17,7 +17,6 @@ class CafePagesRouter extends React.Component {
         {/* <Route path="/cafe/:placeId/menu" component={MenuCafe} /> */}
         <Route path="/cafe/:placeId/comments/:page" component={CommentsCafe} />
         <Route path="/cafe/:placeId/booking" component={CafeBooking} />
-        <Route path="/reservation-info" component={ReservationInfo} />
       </Fragment>
     );
   }

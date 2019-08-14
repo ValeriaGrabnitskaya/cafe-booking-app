@@ -101,7 +101,9 @@ class BookingForm extends React.PureComponent {
             placeId: this.props.mainInfo ? this.props.mainInfo.id : null,
         };
         this.props.dispatch(searchAvailableTablesAC({ body: { searchForm: searchForm, places: this.props.places } }));
-        bookingEvents.emit('SearchAvailableTables', true);
+        if(this.state.isSearchFormValid){
+            bookingEvents.emit('SearchAvailableTables', true);
+        }
     }
 
     onReset = (e) => {
@@ -111,7 +113,7 @@ class BookingForm extends React.PureComponent {
             timeFrom: null,
             timeTo: null,
             placeId: null,
-            isPromptShow: false            
+            isPromptShow: false
         }, this.searchPlaces);
     }
 
@@ -122,7 +124,7 @@ class BookingForm extends React.PureComponent {
             isEmailValid: this.state.email ? true : false,
             isPhoneValid: this.state.phone ? true : false,
             isFirstFormValid: this.state.userName && this.state.email && this.state.phone,
-            isPromptShow: false            
+            isPromptShow: false
         }, this.onBook)
     }
 
@@ -144,8 +146,11 @@ class BookingForm extends React.PureComponent {
     }
 
     render() {
+        let isShowSecondFrom = this.state.userName && this.state.email && this.state.phone;
         let isFormFilled = this.state.userName !== '' || this.state.email !== '' || this.state.phone !== '' ||
             this.state.date !== null || this.state.timeFrom !== null || this.state.timeTo !== null;
+        let isFormReadyToBook = this.state.userName !== '' && this.state.email !== '' && this.state.phone !== '' &&
+            this.state.date !== null && this.state.timeFrom !== null && this.state.timeTo !== null && this.state.selectedTableId !== null;
         return (
             <div className="container BookingFormContainer">
                 <form className="BookingForm">
@@ -178,40 +183,47 @@ class BookingForm extends React.PureComponent {
                         </div>
                     </div>
                 </form>
-                <form className="BookingForm" onSubmit={this.validateForm}>
-                    <div className="form-group mb-md-4" style={{ textAlign: "center" }}>
-                        <h4>Выберите дату и время бронирования:</h4>
-                    </div>
-                    <div className="form-row mb-md-3">
-                        <div className="col-md-12">
-                            <h5 className="LabelInput">Дата<span style={{ color: "red" }}>*</span></h5>
-                            <Calendar className="Calendar" dateFormat="dd.mm.yy" value={this.state.date} onChange={(e) => this.setState({ date: e.value })} showIcon={true} />
-                            <p style={{ color: "red" }}>{(!this.state.isSearchFormValid && !this.state.isDateValid) && 'Заполните поле'}</p>
+                {
+                    (this.state.userName && this.state.email && this.state.phone) &&
+                    <form className="BookingForm" onSubmit={this.validateForm}>
+                        <div className="form-group mb-md-4" style={{ textAlign: "center" }}>
+                            <h4>Выберите дату и время бронирования:</h4>
                         </div>
-                    </div>
-                    <div className="form-row mb-md-5">
-                        <div className="col-md-6 col-sm-12">
-                            <h5 className="LabelInput">Время с<span style={{ color: "red" }}>*</span></h5>
-                            <Dropdown className="Input" value={this.state.timeFrom} options={this.configTime(this.props.openTime, true)} onChange={(e) => this.setState({ timeFrom: e.value })}
-                                filter={true} placeholder="Выберите время" filterBy="id,value" showClear={true} optionLabel="id" />
-                            <p style={{ color: "red" }}>{(!this.state.isSearchFormValid && !this.state.isTimeFromValid) && 'Заполните поле'}</p>
-                            <p style={{ color: "red" }}>{(!this.state.isSearchFormValid && !this.state.isTimePeriodValid) && 'Выберите корректный промежуток времени'}</p>
+                        <div className="form-row mb-md-3">
+                            <div className="col-md-12">
+                                <h5 className="LabelInput">Дата<span style={{ color: "red" }}>*</span></h5>
+                                <Calendar className="Calendar" dateFormat="dd.mm.yy" value={this.state.date} onChange={(e) => this.setState({ date: e.value })} showIcon={true} />
+                                <p style={{ color: "red" }}>{(!this.state.isSearchFormValid && !this.state.isDateValid) && 'Заполните поле'}</p>
+                            </div>
                         </div>
-                        <div className="col-md-6 col-sm-12">
-                            <h5 className="LabelInput">Время по<span style={{ color: "red" }}>*</span></h5>
-                            <Dropdown className="Input" value={this.state.timeTo} options={this.configTime(this.props.openTime, false)} onChange={(e) => this.setState({ timeTo: e.value })}
-                                filter={true} placeholder="Выберите время" filterBy="id,value" showClear={true} optionLabel="id" />
-                            <p style={{ color: "red" }}>{(!this.state.isSearchFormValid && !this.state.isTimeToValid) && 'Заполните поле'}</p>
-                            <p style={{ color: "red" }}>{(!this.state.isSearchFormValid && !this.state.isTimePeriodValid) && 'Выберите корректный промежуток времени'}</p>
+                        <div className="form-row mb-md-5">
+                            <div className="col-md-6 col-sm-12">
+                                <h5 className="LabelInput">Время с<span style={{ color: "red" }}>*</span></h5>
+                                <Dropdown className="Input" value={this.state.timeFrom} options={this.configTime(this.props.openTime, true)} onChange={(e) => this.setState({ timeFrom: e.value })}
+                                    filter={true} placeholder="Выберите время" filterBy="id,value" showClear={true} optionLabel="id" />
+                                <p style={{ color: "red" }}>{(!this.state.isSearchFormValid && !this.state.isTimeFromValid) && 'Заполните поле'}</p>
+                                <p style={{ color: "red" }}>{(!this.state.isSearchFormValid && !this.state.isTimePeriodValid) && 'Выберите корректный промежуток времени'}</p>
+                            </div>
+                            <div className="col-md-6 col-sm-12">
+                                <h5 className="LabelInput">Время по<span style={{ color: "red" }}>*</span></h5>
+                                <Dropdown className="Input" value={this.state.timeTo} options={this.configTime(this.props.openTime, false)} onChange={(e) => this.setState({ timeTo: e.value })}
+                                    filter={true} placeholder="Выберите время" filterBy="id,value" showClear={true} optionLabel="id" />
+                                <p style={{ color: "red" }}>{(!this.state.isSearchFormValid && !this.state.isTimeToValid) && 'Заполните поле'}</p>
+                                <p style={{ color: "red" }}>{(!this.state.isSearchFormValid && !this.state.isTimePeriodValid) && 'Выберите корректный промежуток времени'}</p>
+                            </div>
                         </div>
-                    </div>
-                    <div className="form-group" style={{ textAlign: "right" }}>
-                        <Button label="Сброс" type="button" onClick={this.onReset} style={{ marginRight: "20px" }} />
-                        <Button label="Поиск" type="submit" />
-                    </div>
-                </form>
+                        <div className="form-group" style={{ textAlign: "right" }}>
+                            <Button label="Сбросить данные" type="button" onClick={this.onReset} style={{ marginRight: "20px" }} />
+                            <Button label="Начать поиск столика" className={isShowSecondFrom ? ' SetBorder' : ''} type="submit" />
+                        </div>
+                    </form>
+
+                }
                 <div className="BookingButtonContainer">
-                    <Button className="BookingButton" label="Забронировать" type="button" onClick={this.validateFirstForm} />
+                    {
+                        (isFormReadyToBook) &&
+                        <Button className="BookingButton" label="Забронировать" type="button" onClick={this.validateFirstForm} />
+                    }
                 </div>
                 <Prompt when={isFormFilled && this.state.isPromptShow} message="Вы действительно хотите перейти на другую страницу? Все данные будут утеряны" />
             </div>
