@@ -9,17 +9,20 @@ import PagesLinks from '../routes/PagesLinks/PagesLinks';
 import PagesRouter from '../routes/PageRoutes/PagesRoutes';
 import store from '../store/store';
 import { Footer } from './Footer/Footer';
+import Authentification from './authentification/Authentification';
 
 class App extends React.PureComponent {
   render() {
     return (
-      <Provider store={store}>
-        <BrowserRouter>
-          <PagesLinks />
-          <PagesRouter />
-          <Footer />
-        </BrowserRouter>
-      </Provider>
+      <Authentification />
+
+      // <Provider store={store}>
+      //   <BrowserRouter>
+      //     <PagesLinks />
+      //     <PagesRouter />
+      //     <Footer />
+      //   </BrowserRouter>
+      // </Provider>
     );
   }
 }
